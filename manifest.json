@@ -1,0 +1,15 @@
+{
+  "short_name": "POD",
+  "name": "Mon POD de Communication",
+  "icons": [
+    {
+      "src": "icon.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#f0f4f8",
+  "background_color": "#f0f4f8"
+}

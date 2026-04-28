@@ -1,0 +1,99 @@
+* {
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+    touch-action: none;
+    user-select: none;
+}
+
+body {
+    margin: 0;
+    padding: 15px;
+    background-color: #cbd5e0;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Conteneur principal qui doit prendre toute la place */
+#app-container {
+    height: 100%;
+    width: 100%;
+    display: flex;
+}
+
+.grid-page {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    /* 1 ligne titre (80px) + 3 lignes qui se partagent le reste (1fr) */
+    grid-template-rows: 80px 1fr 1fr 1fr; 
+    gap: 20px;
+    width: 100%;
+    height: 100%;
+}
+
+.header-placeholder {
+    grid-column: span 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+    font-weight: 900;
+    color: #2d3748;
+    background: #edf2f7;
+    border-radius: 15px;
+    border: 2px solid #a0aec0;
+}
+
+.btn {
+    background: white;
+    border: 4px solid #a0aec0;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 6px 0 #718096;
+    padding: 10px;
+}
+
+.btn:active {
+    transform: translateY(4px);
+    box-shadow: 0 2px 0 #718096;
+    background-color: #f7fafc;
+}
+
+.emoji { font-size: clamp(3rem, 12vh, 7rem); }
+
+.btn-text {
+    font-size: clamp(1rem, 2.5vh, 1.8rem);
+    font-weight: 800;
+    margin-top: 10px;
+    color: #1a202c;
+}
+
+.back-btn {
+    grid-column: span 2;
+    background: #edf2f7;
+    flex-direction: row;
+    gap: 15px;
+    border-style: dashed;
+}
+
+/* Style pour les emplacements réservés mais vides */
+.btn.empty {
+    background: transparent;
+    border: 2px dashed rgba(160, 174, 192, 0.2); /* Très discret */
+    box-shadow: none;
+    cursor: default;
+    pointer-events: none; /* Désactive le clic */
+}
+
+/* Style pour les vraies photos */
+.picto-img {
+    height: clamp(3rem, 12vh, 7rem); /* Même taille que les emojis */
+    width: auto;
+    max-width: 90%;
+    object-fit: contain;
+    border-radius: 10px;
+}
