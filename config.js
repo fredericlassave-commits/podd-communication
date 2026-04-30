@@ -156,13 +156,14 @@ var CONFIG_PODD = {
     "page-habits": {
         "titre": "M'HABILLER",
         "boutons": [
-            { "label": "MANTEAU", "emoji": "🧥", "son": "Je mets mon manteau" },
-            { "label": "CHAUSSURES", "emoji": "👟", "son": "Je mets mes chaussures" },
-            { "label": "PULL", "emoji": "👕", "son": "Je veux mettre mon pull" },
-            { "label": "PYJAMA", "emoji": "😴", "son": "Je veux mettre mon pyjama" },
-            { "label": "BONNET", "emoji": "🧤", "son": "Il me faut mon bonnet ou mes gants" },
-            { "label": "CHANGER", "emoji": "🔄", "son": "Je veux changer de vêtements" },
-            { "label": "", "emoji": "", "type": "vide" }, { "label": "", "emoji": "", "type": "vide" },
+            { "label": "METTRE", "emoji": "habiller.png", "son": "Je veux mettre" },
+			{ "label": "CHANGER", "emoji": "🔄", "son": "Je veux changer" },
+			{ "label": "MANTEAU", "emoji": "🧥", "son": "le manteau" },
+            { "label": "CHAUSSURES", "emoji": "👟", "son": "les chaussures" },
+            { "label": "PULL", "emoji": "👕", "son": "le pull" },
+            { "label": "PYJAMA", "emoji": "😴", "son": "le pyjama" },
+            { "label": "BONNET", "emoji": "🧤", "son": "mon bonnet ou mes gants" },            
+            { "label": "COUCHE", "emoji": "couche.jpg", "son": "ma couche" }, 
             { "label": "", "emoji": "", "type": "vide" }, { "label": "", "emoji": "", "type": "vide" },
             { "label": "RETOUR", "emoji": "⬅️", "page": "home", "couleur": "#718096" },
             { "label": "ACCUEIL", "emoji": "🏠", "page": "home", "couleur": "#2d3436" }
