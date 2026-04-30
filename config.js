@@ -4,7 +4,7 @@ var CONFIG_PODD = {
         "boutons": [
             { "label": "MANGER", "emoji": "manger.jpg", "page": "page-manger", "couleur": "#2ecc71" },
             { "label": "BOIRE", "emoji": "boire.jpg", "page": "page-boire", "couleur": "#3498db" },
-            { "label": "JOUER", "emoji": "🧩", "page": "page-jouer", "couleur": "#9b59b6" },
+            { "label": "JOUER", "emoji": "jouer.png", "page": "page-jouer", "couleur": "#9b59b6" },
             { "label": "LES GENS", "emoji": "👨‍👩‍👦", "page": "page-gens", "couleur": "#f368e0" },
             { "label": "SENTIMENTS", "emoji": "😊", "page": "page-emotions", "couleur": "#ff9f43" },
             { "label": "MON CORPS", "emoji": "👦", "page": "page-corps", "couleur": "#00d2d3" },
