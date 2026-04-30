@@ -3,7 +3,7 @@ var CONFIG_PODD = {
         "titre": "JE VEUX DIRE...",
         "boutons": [
             { "label": "MANGER", "emoji": "manger.jpg", "page": "page-manger", "couleur": "#2ecc71" },
-            { "label": "BOIRE", "emoji": "🥤", "page": "page-boire", "couleur": "#3498db" },
+            { "label": "BOIRE", "emoji": "boire.jpg", "page": "page-boire", "couleur": "#3498db" },
             { "label": "JOUER", "emoji": "🧩", "page": "page-jouer", "couleur": "#9b59b6" },
             { "label": "LES GENS", "emoji": "👨‍👩‍👦", "page": "page-gens", "couleur": "#f368e0" },
             { "label": "SENTIMENTS", "emoji": "😊", "page": "page-emotions", "couleur": "#ff9f43" },
@@ -72,8 +72,8 @@ var CONFIG_PODD = {
             { "label": "ÉCRAN", "emoji": "📱", "son": "Je veux la tablette" },
             { "label": "DEHORS", "emoji": "🌳", "son": "Je veux aller dehors" },
             { "label": "CÂLIN", "emoji": "🫂", "son": "Je veux un gros câlin" },
-            { "label": "", "emoji": "", "type": "vide" }, { "label": "", "emoji": "", "type": "vide" },
-            { "label": "", "emoji": "", "type": "vide" }, { "label": "", "emoji": "", "type": "vide" },
+            { "label": "Balançoire", "emoji": "balançoire.jpg", "son": "Je veux faire de la balançoire" },{ "label": "", "emoji": "", "type": "vide" },
+            { "label": "Chatouilles", "emoji": "chatouilles.jpg", "son": "Fais moi des chatouilles" }, { "label": "", "emoji": "", "type": "vide" },
             { "label": "RETOUR", "emoji": "⬅️", "page": "home", "couleur": "#718096" },
             { "label": "ACCUEIL", "emoji": "🏠", "page": "home", "couleur": "#2d3436" }
         ]
@@ -84,8 +84,8 @@ var CONFIG_PODD = {
             { "label": "MAMAN", "emoji": "👩", "son": "Maman" },
             { "label": "PAPA", "emoji": "👨", "son": "Papa" },
             { "label": "MOI", "emoji": "👦", "son": "C'est moi" },
-            { "label": "PAPY/MAMIE", "emoji": "👴", "son": "Papy et Mamie" },
-            { "label": "DOCTEUR", "emoji": "👩‍⚕️", "son": "Le docteur" },
+            { "label": "Alyx", "emoji": "👴", "son": "Alyx" },
+            { "label": "Eliott", "emoji": "👩‍⚕️", "son": "Eliott" },
             { "label": "COPAINS", "emoji": "👫", "son": "Les copains" },
             { "label": "", "emoji": "", "type": "vide" }, { "label": "", "emoji": "", "type": "vide" },
             { "label": "", "emoji": "", "type": "vide" }, { "label": "", "emoji": "", "type": "vide" },
@@ -127,7 +127,7 @@ var CONFIG_PODD = {
         "titre": "OÙ ALLER ?",
         "boutons": [
             { "label": "MAISON", "emoji": "🏠", "son": "Je veux rentrer à la maison" },
-            { "label": "PARC", "emoji": "🛝", "son": "Je veux aller au parc" },
+            { "label": "JARDIN", "emoji": "jardin.jpg", "son": "Je veux aller dans le jaardin" },
             { "label": "MAGASIN", "emoji": "🛒", "son": "On va au magasin" },
             { "label": "VOITURE", "emoji": "🚗", "son": "On prend la voiture" },
             { "label": "ÉCOLE", "emoji": "🏫", "son": "On va à l'école" },
