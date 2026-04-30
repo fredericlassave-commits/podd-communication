@@ -1,23 +1,25 @@
 {
   "short_name": "PODD",
   "name": "PODD Communication Dynamique",
+  "description": "Application de communication PODD pour tablette avec Keyguard.",
   "icons": [
     {
       "src": "images/icon-192.png",
       "type": "image/png",
-      "sizes": "192x192"
+      "sizes": "192x192",
+      "purpose": "any"
     },
     {
       "src": "images/icon-512.png",
       "type": "image/png",
-      "sizes": "512x512"
+      "sizes": "512x512",
+      "purpose": "any maskable"
     }
   ],
-  "start_url": "./index.html",
-  "background_color": "#ffffff",
+  "start_url": "/podd-communication/index.html",
+  "scope": "/podd-communication/",
   "display": "standalone",
-  "scope": "./",
-  "theme_color": "#2196F3",
   "orientation": "landscape",
-  "description": "Application de communication PODD pour tablette avec Keyguard."
+  "background_color": "#ffffff",
+  "theme_color": "#2196F3"
 }
