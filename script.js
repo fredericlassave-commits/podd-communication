@@ -56,6 +56,7 @@ function renderPage(pageKey) {
 
     data.boutons.forEach(b => {
         const btn = document.createElement('button');
+        
         if (!b.label) {
             btn.className = 'btn empty';
         } else {
@@ -71,18 +72,19 @@ function renderPage(pageKey) {
                 }
             };
 
-            // LOGIQUE D'AFFICHAGE IMAGE VS EMOJI
-            let visuel;
+            // --- LOGIQUE D'AFFICHAGE MODIFIÉE POUR IMAGE DE FOND ---
             if (b.emoji && (b.emoji.includes('.') || b.emoji.includes('/'))) {
-                visuel = `<img src="images/${b.emoji}" class="picto-img">`;
+                // Si c'est une image (contient un point ou un slash)
+                btn.classList.add('with-image');
+                btn.style.backgroundImage = `url('images/${b.emoji}')`;
+                btn.innerHTML = `<span class="btn-text">${b.label}</span>`;
             } else {
-                visuel = `<span class="emoji">${b.emoji || ''}</span>`;
+                // Si c'est un emoji classique
+                btn.innerHTML = `
+                    <span class="emoji">${b.emoji || ''}</span>
+                    <span class="btn-text">${b.label}</span>
+                `;
             }
-
-            btn.innerHTML = `
-                ${visuel}
-                <span class="btn-text">${b.label}</span>
-            `;
         }
         grid.appendChild(btn);
     });
@@ -95,7 +97,6 @@ window.onload = () => {
     renderPage('home');
     
     // Petit hack : au premier clic n'importe où, on initialise le moteur audio
-    // (Certains Android bloquent le TTS sans un premier geste utilisateur)
     document.body.addEventListener('click', () => {
         if (voices.length === 0) loadVoices();
     }, { once: true });
