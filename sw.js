@@ -1,6 +1,4 @@
-// On importe la config pour savoir quelles images charger
-importScripts('./config.js');
-
+// On définit les ressources de base immédiatement
 const CACHE_NAME = 'podd-cache-full-v1';
 const STATIC_ASSETS = [
   './',
@@ -8,31 +6,38 @@ const STATIC_ASSETS = [
   './style.css',
   './script.js',
   './config.js',
-  './manifest.json'
+  './manifest.json',
+  './images/icon-192.png',
+  './images/icon-512.png'
 ];
 
-// Fonction pour extraire toutes les images du fichier config
-function getImagesFromConfig() {
-    const images = [];
-    for (const page in CONFIG_PODD) {
-        CONFIG_PODD[page].boutons.forEach(b => {
-            if (b.emoji && (b.emoji.includes('.') || b.emoji.includes('/'))) {
-                images.push(`./images/${b.emoji}`);
-            }
-        });
-    }
-    return images;
-}
-
 self.addEventListener('install', event => {
-    const allAssets = [...STATIC_ASSETS, ...getImagesFromConfig()];
-    
     event.waitUntil(
-        caches.open(CACHE_NAME).then(cache => {
-            console.log('Pré-chargement de tout le vocabulaire...');
-            return cache.addAll(allAssets);
+        caches.open(CACHE_NAME).then(async (cache) => {
+            // 1. On charge d'abord les fichiers critiques
+            await cache.addAll(STATIC_ASSETS);
+            
+            // 2. On essaie de charger les images de la config dynamiquement
+            try {
+                // On importe la config ici pour ne pas bloquer le démarrage
+                importScripts('./config.js');
+                if (typeof CONFIG_PODD !== 'undefined') {
+                    const images = [];
+                    for (const page in CONFIG_PODD) {
+                        CONFIG_PODD[page].boutons.forEach(b => {
+                            if (b.emoji && (b.emoji.includes('.') || b.emoji.includes('/'))) {
+                                images.push(`./images/${b.emoji}`);
+                            }
+                        });
+                    }
+                    return cache.addAll(images);
+                }
+            } catch (err) {
+                console.warn("Erreur de pré-chargement des images de config:", err);
+            }
         })
     );
+    self.skipWaiting(); // Force le nouveau SW à s'activer
 });
 
 self.addEventListener('fetch', event => {
