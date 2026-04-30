@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>PODD Legacy</title>
+    <link rel="stylesheet" href="style.css"> <!-- On garde ton CSS propre -->
+    <style>
+        /* Petit correctif pour s'assurer que la grille s'affiche bien sur vieux Android */
+        .grid-page { display: block; overflow: hidden; }
+        .btn { float: left; width: 30%; margin: 1.5%; height: 120px; }
+    </style>
+</head>
+<body>
+    <div id="app-container"></div>
+
+    <!-- On charge tes données, puis le script compatible -->
+    <script src="config.js"></script>
+    <script src="script-legacy.js"></script>
+</body>
+</html>
