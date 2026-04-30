@@ -8,12 +8,29 @@ var CONFIG_PODD = {
             { "label": "LES GENS", "emoji": "👨‍👩‍👦", "page": "page-gens", "couleur": "#f368e0" },
             { "label": "SENTIMENTS", "emoji": "😊", "page": "page-emotions", "couleur": "#ff9f43" },
             { "label": "MON CORPS", "emoji": "👦", "page": "page-corps", "couleur": "#00d2d3" },
+            { "label": "LIEUX", "emoji": "🏠", "page": "page-lieux", "couleur": "#54a0ff" },
             { "label": "ACTIONS", "emoji": "🏃", "page": "page-actions", "couleur": "#ff9f43" },
             { "label": "L'ÉCOLE", "emoji": "🏫", "page": "page-ecole", "couleur": "#e67e22" },
-            { "label": "LIEUX", "emoji": "🏠", "page": "page-lieux", "couleur": "#54a0ff" },
             { "label": "HABITS", "emoji": "👕", "page": "page-habits", "couleur": "#34495e" },
             { "label": "TEMPS", "emoji": "☀️", "page": "page-temps", "couleur": "#f1c40f" },
-            { "label": "AIDE", "emoji": "🆘", "son": "J'ai besoin d'aide", "couleur": "#e74c3c" }
+            { "label": "PLUS...", "emoji": "➕", "page": "page-plus", "couleur": "#718096" } // Le bouton "+" revient ici
+        ]
+    },
+    "page-plus": {
+        "titre": "PLUS DE CHOIX",
+        "boutons": [
+            { "label": "AIDE", "emoji": "🆘", "son": "J'ai besoin d'aide", "couleur": "#e74c3c" },
+            { "label": "", "emoji": "", "type": "vide" },
+            { "label": "", "emoji": "", "type": "vide" },
+            { "label": "", "emoji": "", "type": "vide" },
+            { "label": "", "emoji": "", "type": "vide" },
+            { "label": "", "emoji": "", "type": "vide" },
+            { "label": "", "emoji": "", "type": "vide" },
+            { "label": "", "emoji": "", "type": "vide" },
+            { "label": "", "emoji": "", "type": "vide" },
+            { "label": "", "emoji": "", "type": "vide" },
+            { "label": "RETOUR", "emoji": "⬅️", "page": "home", "couleur": "#718096" },
+            { "label": "ACCUEIL", "emoji": "🏠", "page": "home", "couleur": "#2d3436" }
         ]
     },
     "page-manger": {
