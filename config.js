@@ -9,26 +9,26 @@ var CONFIG_PODD = {
             { "label": "SENTIMENTS", "emoji": "😊", "page": "page-emotions", "couleur": "#ff9f43" },
             { "label": "MON CORPS", "emoji": "👦", "page": "page-corps", "couleur": "#00d2d3" },
             { "label": "LIEUX", "emoji": "🏠", "page": "page-lieux", "couleur": "#54a0ff" },
-            { "label": "ACTIONS", "emoji": "🏃", "page": "page-actions", "couleur": "#ff9f43" },
-            { "label": "L'ÉCOLE", "emoji": "🏫", "page": "page-ecole", "couleur": "#e67e22" },
+            { "label": "ACTIONS", "emoji": "🏃", "page": "page-actions", "couleur": "#ff9f43" },            
             { "label": "HABITS", "emoji": "👕", "page": "page-habits", "couleur": "#34495e" },
-            { "label": "TEMPS", "emoji": "☀️", "page": "page-temps", "couleur": "#f1c40f" },
+			{ "label": "OUI", "emoji": "oui.jpg", "son": "OUI", "couleur": "#00ff00" },
+            { "label": "NON", "emoji": "non.jpg", "son": "NON", "couleur": "#ff0000" },
             { "label": "PLUS...", "emoji": "➕", "page": "page-plus", "couleur": "#718096" } // Le bouton "+" revient ici
         ]
     },
     "page-plus": {
         "titre": "PLUS DE CHOIX",
         "boutons": [
-            { "label": "AIDE", "emoji": "🆘", "son": "J'ai besoin d'aide", "couleur": "#e74c3c" },
+            { "label": "TEMPS", "emoji": "☀️", "page": "page-temps", "couleur": "#f1c40f" },
+			{ "label": "L'ÉCOLE", "emoji": "🏫", "page": "page-ecole", "couleur": "#e67e22" },
+			{ "label": "AIDE", "emoji": "🆘", "son": "J'ai besoin d'aide", "couleur": "#e74c3c" },
             { "label": "", "emoji": "", "type": "vide" },
             { "label": "", "emoji": "", "type": "vide" },
             { "label": "", "emoji": "", "type": "vide" },
             { "label": "", "emoji": "", "type": "vide" },
             { "label": "", "emoji": "", "type": "vide" },
             { "label": "", "emoji": "", "type": "vide" },
-            { "label": "", "emoji": "", "type": "vide" },
-            { "label": "", "emoji": "", "type": "vide" },
-            { "label": "", "emoji": "", "type": "vide" },
+            { "label": "", "emoji": "", "type": "vide" },                       
             { "label": "RETOUR", "emoji": "⬅️", "page": "home", "couleur": "#718096" },
             { "label": "ACCUEIL", "emoji": "🏠", "page": "home", "couleur": "#2d3436" }
         ]
