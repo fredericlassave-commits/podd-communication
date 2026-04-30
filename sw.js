@@ -1,5 +1,5 @@
 // On définit les ressources de base immédiatement
-const CACHE_NAME = 'podd-cache-full-v1';
+const CACHE_NAME = 'podd-cache-full-v2';
 const STATIC_ASSETS = [
   './',
   './index.html',
