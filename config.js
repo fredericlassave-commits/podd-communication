@@ -13,7 +13,7 @@ var CONFIG_PODD = {
             { "label": "HABITS", "emoji": "👕", "page": "page-habits", "couleur": "#34495e" },
 			{ "label": "OUI", "emoji": "oui.jpg", "son": "OUI", "couleur": "#00ff00" },
             { "label": "NON", "emoji": "non.jpg", "son": "NON", "couleur": "#ff0000" },
-            { "label": "PLUS...", "emoji": "➕", "page": "page-plus", "couleur": "#718096" } // Le bouton "+" revient ici
+            { "label": " ", "emoji": "tourner_page.png", "page": "page-plus", "couleur": "#718096" } // Le bouton "+" revient ici
         ]
     },
     "page-plus": {
