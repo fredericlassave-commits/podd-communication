@@ -39,7 +39,7 @@ C'est l'étape la plus importante pour que la tablette télécharge les nouveaut
 
 🛠 Infos pour l'impression 3D
 
-    Grille : 2 colonnes x 4 lignes (1 titre + 3 boutons).
+    Grille : 4 colonnes x 4 lignes (1 titre + 3 boutons).
 
     Marges : gap: 20px entre les boutons / padding: 15px sur les bords.
 
