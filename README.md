@@ -1,46 +1,67 @@
 📱 PODD de Communication pour mon Neveu
 
-Ce projet est une application de communication alternative et améliorée (CAA) de type PODD, conçue pour être utilisée sur tablette avec un keyguard imprimé en 3D.
+Ce projet est une application de communication alternative et améliorée (CAA) de type PODD, conçue pour être utilisée sur tablette avec un Keyguard imprimé en 3D.
 🚀 Installation Rapide
 
     Ouvrir l'adresse du site sur la tablette.
 
-    Attendre que les images chargent (le système les met automatiquement en cache).
+    Important : Utiliser la fonction "Ajouter à l'écran d'accueil" (Safari ou Chrome) pour lancer l'app en plein écran (mode PWA) sans barre d'adresse.
 
-    Important : Utiliser la fonction "Ajouter à l'écran d'accueil" (Safari ou Chrome) pour lancer l'app en plein écran sans barre d'adresse.
+    Attendre que les images chargent (le système les met automatiquement en cache pour l'usage hors-ligne).
 
-📸 Comment ajouter ou modifier une photo ?
+🎨 Personnalisation des Boutons (config.js)
 
-Pour que les nouvelles images soient disponibles même sans internet (hors-ligne), suis scrupuleusement ces étapes :
-1. Préparer l'image
+Tu peux désormais modifier l'apparence de chaque bouton individuellement pour l'adapter aux besoins visuels de ton neveu.
+1. Ajouter ou modifier une photo
 
-    Format : JPG ou PNG (carré de préférence).
+    Format : JPG ou PNG.
 
-    Lieu : Glisser le fichier dans le dossier /images.
+    Lieu : Placer le fichier dans le dossier /images.
 
-    Nom : Utiliser un nom simple sans espace (ex: doudou.jpg).
+    Code : { "label": "DOUDOU", "emoji": "doudou.jpg", "son": "Je veux mon doudou" }
 
-2. Modifier le vocabulaire
+2. Gérer les Couleurs (Fond et Contour)
 
-    Ouvrir config.js.
+Par défaut, les boutons sont blancs avec un contour gris. Tu peux changer cela :
 
-    Ajouter ou modifier une ligne dans la catégorie souhaitée :
-    { "label": "DOUDOU", "emoji": "doudou.jpg", "son": "Je veux mon doudou" },
+    Changer le fond : Ajoute "couleur": "#HEX" (ex: #2ecc71 pour du vert).
 
-3. Forcer la mise à jour (Le cache)
+    Changer le contour : Ajoute "couleurBordure": "#HEX".
 
-C'est l'étape la plus importante pour que la tablette télécharge les nouveautés :
+    Exemple (Bouton bicolore) :
+    { "label": "BOIRE", "emoji": "boire.png", "couleur": "#ffffff", "couleurBordure": "#3498db" }
+
+3. Masquer le Texte (Label)
+
+Si tu souhaites n'afficher que l'image pour épurer l'interface :
+
+    Laisse le label vide : "label": "".
+
+    L'image ou l'émoji se centrera automatiquement dans le bouton et l'étiquette blanche disparaîtra.
+
+🔄 Forcer la mise à jour (Le cache)
+
+C'est l'étape cruciale pour que la tablette télécharge les nouvelles images ou les changements de code :
 
     Ouvrir sw.js.
 
-    Modifier la variable CACHE_NAME tout en haut (ex: changer v1 en v2).
+    Modifier la variable CACHE_NAME tout en haut (ex: passer de v1 à v2).
 
-    Dès que la tablette sera connectée au Wi-Fi, elle verra le changement et mettra tout à jour.
+    Recharger la page sur la tablette avec une connexion Wi-Fi.
 
-🛠 Infos pour l'impression 3D
+🛠 Infos Techniques & Impression 3D
+Réglages Logiciels
 
-    Grille : 4 colonnes x 4 lignes (1 titre + 3 boutons).
+    Grille : 4 colonnes x 4 lignes (1 ligne Titre/Retour + 3 lignes de boutons).
 
-    Marges : gap: 20px entre les boutons / padding: 15px sur les bords.
+    Bordures CSS : Configurées à 8px pour correspondre à l'épaisseur des parois du Keyguard.
 
-    Réglages 3D : Utiliser un filament doux (PLA/PETG), bords chanfreinés pour une meilleure visibilité des photos.
+    Affichage : Le texte est encapsulé dans une étiquette (cadre) avec un fond blanc opaque pour garantir la lisibilité au-dessus des images.
+
+Réglages Impression 3D
+
+    Précision : Optimisé pour une impression stable à 180°C (selon ton filament).
+
+    Matériau : Utiliser un filament doux au toucher (PLA ou PETG).
+
+    Design : Prévoir des bords chanfreinés sur le Keyguard pour faciliter l'accès aux boutons dans les angles et maximiser la visibilité des pictogrammes.
