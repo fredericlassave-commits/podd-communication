@@ -1,4 +1,4 @@
-const CACHE_NAME = 'podd-cache-full-v2';
+const CACHE_NAME = 'podd-cache-full-v6';
 const STATIC_ASSETS = [
   './',
   './index.html',
