@@ -19,7 +19,7 @@ var CONFIG_PODD = {
     "page-manger": {
         "titre": "MANGER",
         "boutons": [
-            { "label": "MANGER", "emoji": "veux_manger.png", "son": "Je veux manger" },
+            { "label": "", "emoji": "veux_manger.png", "son": "Je veux manger" },
             { "label": "GÂTEAU", "emoji": "🍪", "son": "un gâteau" },
             { "label": "POMME", "emoji": "🍎", "son": "une pomme" },
             { "label": "YAOURT", "emoji": "🍦", "son": "un yaourt" },
@@ -27,8 +27,8 @@ var CONFIG_PODD = {
             { "label": "PAIN", "emoji": "🍞", "son": "du pain" },
             { "label": "COMPOTE", "emoji": "🍎", "son": "une compote" },
             { "label": "", "type": "vide" }, 
-            { "label": "MIAM", "emoji": "miam.png", "son": "Miam, c'est bon", "couleurBordure": "#2ecc71" }, 
-            { "label": "BEURK", "emoji": "beurk.png", "son": "Beurk, c'est pas bon", "couleurBordure": "#e74c3c" },
+            { "label": "", "emoji": "miam.png", "son": "Miam, c'est bon", "couleurBordure": "#2ecc71" }, 
+            { "label": "", "emoji": "beurk.png", "son": "Beurk, c'est pas bon", "couleurBordure": "#e74c3c" },
             { "label": "", "type": "vide" },
             { "label": "ACCUEIL", "emoji": "🏠", "page": "home", "couleurBordure": "#2d3436" }
         ]
