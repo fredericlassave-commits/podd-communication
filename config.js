@@ -20,32 +20,33 @@ var CONFIG_PODD = {
         "titre": "MANGER",
         "boutons": [
             { "label": "", "emoji": "veux_manger.png", "son": "Je veux manger" },
-            { "label": "GÂTEAU", "emoji": "🍪", "son": "un gâteau" },
-            { "label": "POMME", "emoji": "🍎", "son": "une pomme" },
-            { "label": "YAOURT", "emoji": "🍦", "son": "un yaourt" },
-            { "label": "BANANE", "emoji": "🍌", "son": "une banane" },
-            { "label": "PAIN", "emoji": "🍞", "son": "du pain" },
-            { "label": "COMPOTE", "emoji": "🍎", "son": "une compote" },
-            { "label": "", "type": "vide" }, 
+            { "label": "BISCUIT", "emoji": "biscuit.png", "son": "un biscuit" },
+            { "label": "POMME", "emoji": "pomme.png", "son": "une pomme" },
+            { "label": "YAOURT", "emoji": "yaourt.png", "son": "un yaourt" },
+            { "label": "BANANE", "emoji": "banane.png", "son": "une banane" },
+            { "label": "PAIN", "emoji": "pain.png", "son": "du pain" },
+            { "label": "COMPOTE", "emoji": "compote.png", "son": "une compote" },
+			{ "label": "GÂTEAU", "emoji": "gateau.png", "son": "un gâteau" },
             { "label": "", "emoji": "miam.png", "son": "Miam, c'est bon", "couleurBordure": "#2ecc71" }, 
             { "label": "", "emoji": "beurk.png", "son": "Beurk, c'est pas bon", "couleurBordure": "#e74c3c" },
-            { "label": "", "type": "vide" },
-            { "label": "ACCUEIL", "emoji": "🏠", "page": "home", "couleurBordure": "#2d3436" }
+            { "label": "", "emoji": "tourner_page.png", "page": "page-manger-plus", "couleurBordure": "#718096" },
+            { "label": "", "emoji": "oups.png", "page": "home", "couleurBordure": "#2d3436" }
         ]
     },
     "page-boire": {
         "titre": "BOIRE",
         "boutons": [
-            { "label": "EAU", "emoji": "💧", "son": "Je veux de l'eau" },
-            { "label": "JUS", "emoji": "🍊", "son": "Je veux du jus" },
-            { "label": "LAIT", "emoji": "🥛", "son": "Je veux du lait" },
-            { "label": "CHOCO", "emoji": "☕", "son": "Je veux un chocolat chaud" },
-            { "label": "GOURDE", "emoji": "🍼", "son": "Je veux ma gourde" },
-            { "label": "SOIF", "emoji": "👅", "son": "J'ai très soif" },
+            { "label": "EAU", "emoji": "eau.png", "son": "Je veux de l'eau" },
+            { "label": "JUS", "emoji": "jus.png", "son": "Je veux du jus" },
+            { "label": "LAIT", "emoji": "lait.png", "son": "Je veux du lait" },
+            { "label": "CHOCO", "emoji": "chococho.png", "son": "Je veux un chocolat chaud" },
+            { "label": "GOURDE", "emoji": "gourde.png", "son": "Je veux ma gourde" },
+            { "label": "SOIF", "emoji": "soif.jpg", "son": "J'ai très soif" },
+            { "label": "BIERE", "emoji": "bière.png", "son": "Marge, apporte une bière" }, 			
+			{ "label": "", "type": "vide" },
             { "label": "", "type": "vide" }, { "label": "", "type": "vide" },
-            { "label": "", "type": "vide" }, { "label": "", "type": "vide" },
-            { "label": "", "type": "vide" },
-            { "label": "ACCUEIL", "emoji": "🏠", "page": "home", "couleurBordure": "#2d3436" }
+            { "label": "", "emoji": "tourner_page.png", "page": "page-boire-plus", "couleurBordure": "#718096" },
+            { "label": "", "emoji": "oups.png", "page": "home", "couleurBordure": "#2d3436" }
         ]
     },
     "page-jouer": {
@@ -56,12 +57,13 @@ var CONFIG_PODD = {
             { "label": "DESSIN", "emoji": "🖍️", "son": "Je veux dessiner" },
             { "label": "ÉCRAN", "emoji": "📱", "son": "Je veux la tablette" },
             { "label": "DEHORS", "emoji": "🌳", "son": "Je veux aller dehors" },
-            { "label": "CÂLIN", "emoji": "🫂", "son": "Je veux un gros câlin" },
+			{ "label": "", "emoji": "balle.png", "son": "Je veux jouer au ballon" },
+            { "label": "", "emoji": "calin.png", "son": "Je veux un gros câlin" },
             { "label": "BALANÇOIRE", "emoji": "balançoire.jpg", "son": "Je veux faire de la balançoire" },
             { "label": "CHATOUILLES", "emoji": "chatouilles.jpg", "son": "Fais moi des chatouilles" },
-            { "label": "", "type": "vide" }, { "label": "", "type": "vide" },
             { "label": "", "type": "vide" },
-            { "label": "ACCUEIL", "emoji": "🏠", "page": "home", "couleurBordure": "#2d3436" }
+            { "label": "", "emoji": "tourner_page.png", "page": "page-jouer-plus", "couleurBordure": "#718096" },
+            { "label": "", "emoji": "oups.png", "page": "home", "couleurBordure": "#2d3436" }
         ]
     },
     "page-gens": {
@@ -72,11 +74,12 @@ var CONFIG_PODD = {
             { "label": "MOI", "emoji": "👦", "son": "C'est moi" },
             { "label": "Alyx", "emoji": "👴", "son": "Alyx" },
             { "label": "Eliott", "emoji": "👩‍⚕️", "son": "Eliott" },
-            { "label": "COPAINS", "emoji": "👫", "son": "Les copains" },
+            { "label": "COPAINS", "emoji": "👫", "son": "Les copains" },            
+			{ "label": "Docteur", "emoji": "👩‍⚕️", "son": "Docteur" },
             { "label": "", "type": "vide" }, { "label": "", "type": "vide" },
-            { "label": "", "type": "vide" }, { "label": "", "type": "vide" },
-            { "label": "", "type": "vide" },
-            { "label": "ACCUEIL", "emoji": "🏠", "page": "home", "couleurBordure": "#2d3436" }
+            { "label": "", "emoji": "quiestce.png", "son": "Qui est-ce ?" },
+			{ "label": "", "emoji": "tourner_page.png", "page": "page-gens-plus", "couleurBordure": "#718096" },
+            { "label": "", "emoji": "oups.png", "page": "home", "couleurBordure": "#2d3436" }
         ]
     },
     "page-emotions": {
@@ -88,10 +91,10 @@ var CONFIG_PODD = {
             { "label": "MAL", "emoji": "🤕", "son": "J'ai mal" },
             { "label": "STOP", "emoji": "✋", "son": "Arrêtez ça" },
             { "label": "BRUIT", "emoji": "👂", "son": "C'est trop bruyant" },
+            { "label": "", "emoji": "aime.png", "son": "J'aime beaucoup" }, { "label": "", "type": "vide" },
             { "label": "", "type": "vide" }, { "label": "", "type": "vide" },
-            { "label": "", "type": "vide" }, { "label": "", "type": "vide" },
-            { "label": "", "type": "vide" },
-            { "label": "ACCUEIL", "emoji": "🏠", "page": "home", "couleurBordure": "#2d3436" }
+            { "label": "", "emoji": "tourner_page.png", "page": "page-emotions-plus", "couleurBordure": "#718096" },
+            { "label": "", "emoji": "oups.png", "page": "home", "couleurBordure": "#2d3436" }
         ]
     },
     "page-corps": {
@@ -105,23 +108,24 @@ var CONFIG_PODD = {
             { "label": "AIDE", "emoji": "🆘", "son": "Aide-moi s'il te plaît", "couleur": "#e74c3c" },
             { "label": "", "type": "vide" }, { "label": "", "type": "vide" },
             { "label": "", "type": "vide" }, { "label": "", "type": "vide" },
-            { "label": "", "type": "vide" },
-            { "label": "ACCUEIL", "emoji": "🏠", "page": "home", "couleurBordure": "#2d3436" }
+            { "label": "", "emoji": "tourner_page.png", "page": "page-corps-plus", "couleurBordure": "#718096" },
+            { "label": "", "emoji": "oups.png", "page": "home", "couleurBordure": "#2d3436" }
         ]
     },
     "page-lieux": {
         "titre": "OÙ ALLER ?",
         "boutons": [
-            { "label": "MAISON", "emoji": "🏠", "son": "Je veux rentrer à la maison" },
-            { "label": "JARDIN", "emoji": "jardin.jpg", "son": "Je veux aller dans le jardin" },
-            { "label": "MAGASIN", "emoji": "🛒", "son": "On va au magasin" },
-            { "label": "VOITURE", "emoji": "🚗", "son": "On prend la voiture" },
-            { "label": "ÉCOLE", "emoji": "🏫", "son": "On va à l'école" },
-            { "label": "CHAMBRE", "emoji": "🛏️", "son": "Je vais dans ma chambre" },
+            { "label": "Je veux aller ...", "emoji": "aller.png", "son": "Je veux aller" },
+			{ "label": "MAISON", "emoji": "🏠", "son": "à la maison" },
+            { "label": "JARDIN", "emoji": "jardin.jpg", "son": "dans le jardin" },
+            { "label": "MAGASIN", "emoji": "🛒", "son": "au magasin" },
+            { "label": "VOITURE", "emoji": "🚗", "son": "Dans la voiture" },
+            { "label": "I.M.E", "emoji": "🏫", "son": "à l'IME" },
+            { "label": "CHAMBRE", "emoji": "🛏️", "son": "dans ma chambre" },
             { "label": "", "type": "vide" }, { "label": "", "type": "vide" },
-            { "label": "", "type": "vide" }, { "label": "", "type": "vide" },
-            { "label": "", "type": "vide" },
-            { "label": "ACCUEIL", "emoji": "🏠", "page": "home", "couleurBordure": "#2d3436" }
+            { "label": "", "type": "vide" }, 
+            { "label": "", "emoji": "tourner_page.png", "page": "page-lieux-plus", "couleurBordure": "#718096" },
+            { "label": "", "emoji": "oups.png", "page": "home", "couleurBordure": "#2d3436" }
         ]
     },
     "page-habits": {
@@ -136,8 +140,8 @@ var CONFIG_PODD = {
             { "label": "BONNET", "emoji": "🧤", "son": "mon bonnet ou mes gants" },            
             { "label": "", "emoji": "couche.jpg", "son": "ma couche" }, 
             { "label": "", "type": "vide" }, { "label": "", "type": "vide" },
-            { "label": "", "type": "vide" },
-            { "label": "ACCUEIL", "emoji": "🏠", "page": "home", "couleurBordure": "#2d3436" }
+            { "label": "", "emoji": "tourner_page.png", "page": "page-habits-plus", "couleurBordure": "#718096" },
+            { "label": "", "emoji": "oups.png", "page": "home", "couleurBordure": "#2d3436" }
         ]
     },
     "page-actions": {
@@ -148,24 +152,151 @@ var CONFIG_PODD = {
             { "label": "DONNER", "emoji": "🤲", "son": "Donne-moi" },
             { "label": "PARTIR", "emoji": "🚪", "son": "Je veux partir" },
             { "label": "ATTENDRE", "emoji": "⏳", "son": "Attends" },
-            { "label": "ENCORE", "emoji": "🔄", "son": "Je veux encore" },
+            { "label": "ENCORE", "emoji": "encore.png", "son": "Encore" },
             { "label": "", "type": "vide" }, { "label": "", "type": "vide" },
             { "label": "", "type": "vide" }, { "label": "", "type": "vide" },
-            { "label": "", "type": "vide" },
-            { "label": "ACCUEIL", "emoji": "🏠", "page": "home", "couleurBordure": "#2d3436" }
+            { "label": "", "emoji": "tourner_page.png", "page": "page-actions-plus", "couleurBordure": "#718096" },
+            { "label": "", "emoji": "oups.png", "page": "home", "couleurBordure": "#2d3436" }
         ]
     },
     "page-plus": {
         "titre": "PLUS DE CHOIX",
         "boutons": [
             { "label": "TEMPS", "emoji": "☀️", "page": "page-temps", "couleurBordure": "#f1c40f" },
+			{ "label": "LIEUX", "emoji": "ou.png", "page": "page-lieux", "couleurBordure": "#54a0ff" },
             { "label": "L'ÉCOLE", "emoji": "🏫", "page": "page-ecole", "couleurBordure": "#e67e22" },
             { "label": "AIDE", "emoji": "🆘", "son": "J'ai besoin d'aide", "couleur": "#e74c3c" },
             { "label": "", "type": "vide" }, { "label": "", "type": "vide" },
             { "label": "", "type": "vide" }, { "label": "", "type": "vide" },
             { "label": "", "type": "vide" }, { "label": "", "type": "vide" },
+            { "label": "", "type": "vide" },
+            { "label": "", "emoji": "oups.png", "page": "home", "couleurBordure": "#2d3436" }
+        ]
+    },
+	"page-manger-plus": {
+        "titre": "PLUS DE CHOIX",
+        "boutons": [
+            { "label": "", "type": "vide" },
+			{ "label": "", "type": "vide" },
+            { "label": "", "type": "vide" },
+            { "label": "", "type": "vide" },
             { "label": "", "type": "vide" }, { "label": "", "type": "vide" },
-            { "label": "ACCUEIL", "emoji": "🏠", "page": "home", "couleurBordure": "#2d3436" }
+            { "label": "", "type": "vide" }, { "label": "", "type": "vide" },
+            { "label": "", "type": "vide" }, { "label": "", "type": "vide" },
+            { "label": "", "type": "vide" },
+            { "label": "", "emoji": "oups.png", "page": "home", "couleurBordure": "#2d3436" }
+        ]
+    },
+	"page-boire-plus": {
+        "titre": "PLUS DE CHOIX",
+        "boutons": [
+            { "label": "", "type": "vide" },
+			{ "label": "", "type": "vide" },
+            { "label": "", "type": "vide" },
+            { "label": "", "type": "vide" },
+            { "label": "", "type": "vide" }, { "label": "", "type": "vide" },
+            { "label": "", "type": "vide" }, { "label": "", "type": "vide" },
+            { "label": "", "type": "vide" }, { "label": "", "type": "vide" },
+            { "label": "", "type": "vide" },
+            { "label": "", "emoji": "oups.png", "page": "home", "couleurBordure": "#2d3436" }
+        ]
+    },
+	"page-jouer-plus": {
+        "titre": "PLUS DE CHOIX",
+        "boutons": [
+            { "label": "", "type": "vide" },
+			{ "label": "", "type": "vide" },
+            { "label": "", "type": "vide" },
+            { "label": "", "type": "vide" },
+            { "label": "", "type": "vide" }, { "label": "", "type": "vide" },
+            { "label": "", "type": "vide" }, { "label": "", "type": "vide" },
+            { "label": "", "type": "vide" }, { "label": "", "type": "vide" },
+            { "label": "", "type": "vide" },
+            { "label": "", "emoji": "oups.png", "page": "home", "couleurBordure": "#2d3436" }
+        ]
+    },
+	"page-gens-plus": {
+        "titre": "PLUS DE CHOIX",
+        "boutons": [
+            { "label": "", "type": "vide" },
+			{ "label": "", "type": "vide" },
+            { "label": "", "type": "vide" },
+            { "label": "", "type": "vide" },
+            { "label": "", "type": "vide" }, { "label": "", "type": "vide" },
+            { "label": "", "type": "vide" }, { "label": "", "type": "vide" },
+            { "label": "", "type": "vide" }, { "label": "", "type": "vide" },
+            { "label": "", "type": "vide" },
+            { "label": "", "emoji": "oups.png", "page": "home", "couleurBordure": "#2d3436" }
+        ]
+    },
+	"page-emotions-plus": {
+        "titre": "PLUS DE CHOIX",
+        "boutons": [
+            { "label": "", "type": "vide" },
+			{ "label": "", "type": "vide" },
+            { "label": "", "type": "vide" },
+            { "label": "", "type": "vide" },
+            { "label": "", "type": "vide" }, { "label": "", "type": "vide" },
+            { "label": "", "type": "vide" }, { "label": "", "type": "vide" },
+            { "label": "", "type": "vide" }, { "label": "", "type": "vide" },
+            { "label": "", "type": "vide" },
+            { "label": "", "emoji": "oups.png", "page": "home", "couleurBordure": "#2d3436" }
+        ]
+    },
+	"page-corps-plus": {
+        "titre": "PLUS DE CHOIX",
+        "boutons": [
+            { "label": "", "type": "vide" },
+			{ "label": "", "type": "vide" },
+            { "label": "", "type": "vide" },
+            { "label": "", "type": "vide" },
+            { "label": "", "type": "vide" }, { "label": "", "type": "vide" },
+            { "label": "", "type": "vide" }, { "label": "", "type": "vide" },
+            { "label": "", "type": "vide" }, { "label": "", "type": "vide" },
+            { "label": "", "type": "vide" },
+            { "label": "", "emoji": "oups.png", "page": "home", "couleurBordure": "#2d3436" }
+        ]
+    },
+	"page-lieux-plus": {
+        "titre": "PLUS DE CHOIX",
+        "boutons": [
+            { "label": "", "type": "vide" },
+			{ "label": "", "type": "vide" },
+            { "label": "", "type": "vide" },
+            { "label": "", "type": "vide" },
+            { "label": "", "type": "vide" }, { "label": "", "type": "vide" },
+            { "label": "", "type": "vide" }, { "label": "", "type": "vide" },
+            { "label": "", "type": "vide" }, { "label": "", "type": "vide" },
+            { "label": "", "type": "vide" },
+            { "label": "", "emoji": "oups.png", "page": "home", "couleurBordure": "#2d3436" }
+        ]
+    },
+	"page-habits-plus": {
+        "titre": "PLUS DE CHOIX",
+        "boutons": [
+            { "label": "", "type": "vide" },
+			{ "label": "", "type": "vide" },
+            { "label": "", "type": "vide" },
+            { "label": "", "type": "vide" },
+            { "label": "", "type": "vide" }, { "label": "", "type": "vide" },
+            { "label": "", "type": "vide" }, { "label": "", "type": "vide" },
+            { "label": "", "type": "vide" }, { "label": "", "type": "vide" },
+            { "label": "", "type": "vide" },
+            { "label": "", "emoji": "oups.png", "page": "home", "couleurBordure": "#2d3436" }
+        ]
+    },
+	"page-actions-plus": {
+        "titre": "PLUS DE CHOIX",
+        "boutons": [
+            { "label": "", "type": "vide" },
+			{ "label": "", "type": "vide" },
+            { "label": "", "type": "vide" },
+            { "label": "", "type": "vide" },
+            { "label": "", "type": "vide" }, { "label": "", "type": "vide" },
+            { "label": "", "type": "vide" }, { "label": "", "type": "vide" },
+            { "label": "", "type": "vide" }, { "label": "", "type": "vide" },
+            { "label": "", "type": "vide" },
+            { "label": "", "emoji": "oups.png", "page": "home", "couleurBordure": "#2d3436" }
         ]
     },
     "page-temps": {
@@ -180,7 +311,7 @@ var CONFIG_PODD = {
             { "label": "", "type": "vide" }, { "label": "", "type": "vide" },
             { "label": "", "type": "vide" }, { "label": "", "type": "vide" },
             { "label": "", "type": "vide" },
-            { "label": "ACCUEIL", "emoji": "🏠", "page": "home", "couleurBordure": "#2d3436" }
+            { "label": "", "emoji": "oups.png", "page": "home", "couleurBordure": "#2d3436" }
         ]
     },
     "page-ecole": {
@@ -195,7 +326,7 @@ var CONFIG_PODD = {
             { "label": "", "type": "vide" }, { "label": "", "type": "vide" },
             { "label": "", "type": "vide" }, { "label": "", "type": "vide" },
             { "label": "", "type": "vide" },
-            { "label": "ACCUEIL", "emoji": "🏠", "page": "home", "couleurBordure": "#2d3436" }
+            { "label": "", "emoji": "oups.png", "page": "home", "couleurBordure": "#2d3436" }
         ]
     }
 };
