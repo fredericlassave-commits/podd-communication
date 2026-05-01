@@ -44,8 +44,9 @@ body {
     border: 2px solid #a0aec0;
 }
 
+/* --- STYLE DES BOUTONS --- */
 .btn {
-    border-width: 8px; 
+    border-width: 8px; /* Épaisseur pour l'impression 3D à 180°C */
     border-style: solid;
     border-radius: 25px;
     display: flex;
@@ -57,6 +58,7 @@ body {
     overflow: hidden;
     cursor: pointer;
     padding: 10px;
+    transition: transform 0.1s;
 }
 
 .btn:active {
@@ -64,6 +66,7 @@ body {
     box-shadow: none;
 }
 
+/* --- IMAGES ET EMOJIS --- */
 .btn.with-image {
     background-repeat: no-repeat;
     background-position: center 30%; 
@@ -75,28 +78,40 @@ body {
     font-size: clamp(2rem, 7vh, 4rem);
 }
 
+/* --- ÉTIQUETTE DE TEXTE EN TRANSPARENCE --- */
 .btn-text {
     font-size: clamp(0.7rem, 1.8vh, 1rem);
     font-weight: 800;
     color: #1a202c;
     text-align: center;
-    background: rgba(255, 255, 255, 0.95);
-    border: 2px solid #a0aec0;
+    
+    /* Effet de transparence (50% blanc) */
+    background: rgba(255, 255, 255, 0.55); 
+    
+    /* Effet de flou derrière le texte pour la lisibilité */
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    
+    /* Bordure fine et discrète pour le cadre */
+    border: 1.5px solid rgba(160, 174, 192, 0.4);
     border-radius: 12px;
+    
     padding: 3px 10px;
     width: auto;
     min-width: 70%;
-    margin-top: 5px; /* Espace si emoji au dessus */
-    margin-bottom: 2px;
+    margin-top: 5px; 
+    margin-bottom: 4px;
+    
     text-transform: uppercase;
     z-index: 10;
 }
 
-/* Si le texte est vide, on cache tout débordement */
+/* Masquer l'étiquette si le label est vide dans config.js */
 .btn-text:empty {
     display: none;
 }
 
+/* --- BOUTON RETOUR --- */
 .back-btn {
     grid-column: span 4; 
     background-color: #edf2f7 !important;
@@ -106,11 +121,15 @@ body {
     justify-content: center !important;
 }
 
+/* On retire la transparence sur le bouton retour pour plus de clarté */
 .back-btn .btn-text {
     border: none;
     background: transparent;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
 }
 
+/* --- BOUTON VIDE --- */
 .btn.empty {
     background-color: transparent !important;
     border: none !important;
