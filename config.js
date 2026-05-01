@@ -69,11 +69,11 @@ var CONFIG_PODD = {
     "page-gens": {
         "titre": "LES GENS",
         "boutons": [
-            { "label": "MAMAN", "emoji": "👩", "son": "Maman" },
-            { "label": "PAPA", "emoji": "👨", "son": "Papa" },
-            { "label": "MOI", "emoji": "👦", "son": "C'est moi" },
-            { "label": "Alyx", "emoji": "👴", "son": "Alyx" },
-            { "label": "Eliott", "emoji": "👩‍⚕️", "son": "Eliott" },
+            { "label": "MAMAN", "emoji": "maman.jpg", "son": "Maman" },
+            { "label": "PAPA", "emoji": "papa.jpg", "son": "Papa" },
+            { "label": "MOI", "emoji": "moi.jpg", "son": "C'est moi" },
+            { "label": "Alyx", "emoji": "alyx.jpg", "son": "Alyx" },
+            { "label": "Eliott", "emoji": "eliott.jpg", "son": "Eliott" },
             { "label": "COPAINS", "emoji": "👫", "son": "Les copains" },            
 			{ "label": "Docteur", "emoji": "👩‍⚕️", "son": "Docteur" },
             { "label": "", "type": "vide" }, { "label": "", "type": "vide" },
