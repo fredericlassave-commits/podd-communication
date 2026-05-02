@@ -1,4 +1,14 @@
-// --- INITIALISATION DU MOTEUR VOCAL ---
+// 1. RÉCUPÉRATION DE LA VERSION ET RELOAD AUTOMATIQUE
+const APP_VERSION = typeof CONFIG_VERSION !== 'undefined' ? "v" + CONFIG_VERSION : "v0.0";
+
+if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.addEventListener('controllerchange', () => {
+        // Un nouveau Service Worker a pris le contrôle, on recharge pour appliquer les changements
+        window.location.reload();
+    });
+}
+
+// 2. INITIALISATION DU MOTEUR VOCAL
 let voices = [];
 function loadVoices() {
     voices = window.speechSynthesis.getVoices();
@@ -18,7 +28,7 @@ function parler(texte) {
     window.speechSynthesis.speak(msg);
 }
 
-// --- FONCTION DE RENDU ---
+// 3. FONCTION DE RENDU DES PAGES
 function renderPage(pageKey) {
     const container = document.getElementById('app-container');
     const data = CONFIG_PODD[pageKey];
@@ -28,10 +38,14 @@ function renderPage(pageKey) {
     const grid = document.createElement('div');
     grid.className = 'grid-page';
     
+    // Titre (avec version auto) ou Bouton Retour
     if (pageKey === 'home') {
         const header = document.createElement('div');
         header.className = 'header-placeholder';
-        header.innerText = data.titre;
+        header.innerHTML = `
+            <div class="header-title">${data.titre}</div>
+            <div class="version-tag">${APP_VERSION}</div>
+        `;
         grid.appendChild(header);
     } else {
         const backBtn = document.createElement('button');
@@ -63,14 +77,12 @@ function renderPage(pageKey) {
                 else if (b.son) parler(b.son);
             };
 
-            // --- LOGIQUE D'AFFICHAGE CONDITIONNEL DU LABEL ---
             const labelHTML = b.label ? `<span class="btn-text">${b.label}</span>` : '';
 
             if (b.emoji && (b.emoji.includes('.') || b.emoji.includes('/'))) {
                 btn.classList.add('with-image');
                 btn.style.backgroundImage = `url('images/${b.emoji}')`;
                 btn.innerHTML = labelHTML;
-                // Si pas de label, on centre l'image
                 if (!b.label) btn.style.backgroundPosition = "center center";
             } else {
                 btn.innerHTML = `
