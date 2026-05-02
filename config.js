@@ -1,4 +1,4 @@
-var CONFIG_VERSION = "1.0.18"; // <-- L'UNIQUE ENDROIT À MODIFIER
+var CONFIG_VERSION = "1.0.19"; // <-- L'UNIQUE ENDROIT À MODIFIER
 
 var CONFIG_PODD = {
     "home": {
@@ -13,8 +13,8 @@ var CONFIG_PODD = {
             { "label": "LIEUX", "emoji": "🏠", "page": "page-lieux", "couleurBordure": "#54a0ff" },
             { "label": "ACTIONS", "emoji": "🏃", "page": "page-actions", "couleurBordure": "#ff9f43" },            
             { "label": "HABITS", "emoji": "👕", "page": "page-habits", "couleurBordure": "#34495e" },
-            { "label": "", "emoji": "oui.jpg", "son": "OUI", "couleurBordure": "#00ff00", "couleur": "#ff0000" },
-            { "label": "", "emoji": "non.jpg", "son": "NON", "couleurBordure": "#ff0000","couleur": "#00ff00" },
+            { "label": "", "emoji": "oui.jpg", "son": "OUI", "couleurBordure": "#00ff00", "couleur": "#00ff00" },
+            { "label": "", "emoji": "non.jpg", "son": "NON", "couleurBordure": "#ff0000","couleur": "#ff0000" },
             { "label": "", "emoji": "tourner_page.png", "page": "page-plus", "couleurBordure": "#718096" }
         ]
     },
