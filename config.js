@@ -1,4 +1,4 @@
-var CONFIG_VERSION = "1.0.19"; // <-- L'UNIQUE ENDROIT À MODIFIER
+var CONFIG_VERSION = "1.0.20"; // <-- L'UNIQUE ENDROIT À MODIFIER
 
 var CONFIG_PODD = {
     "home": {

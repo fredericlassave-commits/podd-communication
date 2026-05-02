@@ -89,7 +89,7 @@ body {
 .btn.with-image {
     background-repeat: no-repeat;
     background-position: center 30%; 
-    background-size: 60% auto;
+    background-size: 40% auto;
     justify-content: flex-end; 
 }
 
