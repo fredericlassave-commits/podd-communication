@@ -3,9 +3,29 @@ const APP_VERSION = typeof CONFIG_VERSION !== 'undefined' ? "v" + CONFIG_VERSION
 
 if ('serviceWorker' in navigator) {
     navigator.serviceWorker.addEventListener('controllerchange', () => {
-        // Un nouveau Service Worker a pris le contrôle, on recharge pour appliquer les changements
         window.location.reload();
     });
+}
+
+// FONCTION DE MISE À JOUR MANUELLE
+async function forcerMiseAJour() {
+    if ('serviceWorker' in navigator) {
+        // 1. On récupère toutes les clés de cache
+        const cacheKeys = await caches.keys();
+        // 2. On les supprime toutes
+        await Promise.all(cacheKeys.map(key => caches.delete(key)));
+        
+        // 3. On désenregistre le Service Worker
+        const registrations = await navigator.serviceWorker.getRegistrations();
+        for (let registration of registrations) {
+            await registration.unregister();
+        }
+        
+        // 4. On recharge la page (ce qui réinstallera le SW tout neuf)
+        window.location.reload(true);
+    } else {
+        window.location.reload(true);
+    }
 }
 
 // 2. INITIALISATION DU MOTEUR VOCAL
@@ -38,13 +58,14 @@ function renderPage(pageKey) {
     const grid = document.createElement('div');
     grid.className = 'grid-page';
     
-    // Titre (avec version auto) ou Bouton Retour
     if (pageKey === 'home') {
         const header = document.createElement('div');
         header.className = 'header-placeholder';
         header.innerHTML = `
             <div class="header-title">${data.titre}</div>
-            <div class="version-tag">${APP_VERSION}</div>
+            <button class="version-tag" onclick="forcerMiseAJour()" title="Forcer la mise à jour">
+                ${APP_VERSION} 🔄
+            </button>
         `;
         grid.appendChild(header);
     } else {
@@ -57,20 +78,14 @@ function renderPage(pageKey) {
 
     data.boutons.forEach(b => {
         const btn = document.createElement('button');
-        
         if (!b.label && !b.emoji) {
             btn.className = 'btn empty';
         } else {
             btn.className = 'btn';
             btn.style.backgroundColor = b.couleur || "#ffffff"; 
-            
-            if (b.couleurBordure) {
-                btn.style.borderColor = b.couleurBordure;
-            } else if (b.couleur) {
-                btn.style.borderColor = b.couleur;
-            } else {
-                btn.style.borderColor = "#a0aec0"; 
-            }
+            if (b.couleurBordure) btn.style.borderColor = b.couleurBordure;
+            else if (b.couleur) btn.style.borderColor = b.couleur;
+            else btn.style.borderColor = "#a0aec0"; 
 
             btn.onclick = () => {
                 if (b.page) renderPage(b.page);
@@ -78,17 +93,13 @@ function renderPage(pageKey) {
             };
 
             const labelHTML = b.label ? `<span class="btn-text">${b.label}</span>` : '';
-
             if (b.emoji && (b.emoji.includes('.') || b.emoji.includes('/'))) {
                 btn.classList.add('with-image');
                 btn.style.backgroundImage = `url('images/${b.emoji}')`;
                 btn.innerHTML = labelHTML;
                 if (!b.label) btn.style.backgroundPosition = "center center";
             } else {
-                btn.innerHTML = `
-                    <span class="emoji">${b.emoji || ''}</span>
-                    ${labelHTML}
-                `;
+                btn.innerHTML = `<span class="emoji">${b.emoji || ''}</span>${labelHTML}`;
             }
         }
         grid.appendChild(btn);
@@ -96,6 +107,4 @@ function renderPage(pageKey) {
     container.appendChild(grid);
 }
 
-window.onload = () => {
-    renderPage('home');
-};
+window.onload = () => renderPage('home');
