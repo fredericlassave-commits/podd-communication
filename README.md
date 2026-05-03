@@ -7,61 +7,62 @@ Ce projet est une application de communication alternative et améliorée (CAA) 
 
     Important : Utiliser la fonction "Ajouter à l'écran d'accueil" (Safari ou Chrome) pour lancer l'app en plein écran (mode PWA) sans barre d'adresse.
 
-    Attendre que les images chargent (le système les met automatiquement en cache pour l'usage hors-ligne).
+    Mise en cache : Le système télécharge automatiquement les fichiers et images pour un usage 100% hors-ligne.
 
-🎨 Personnalisation des Boutons (config.js)
+🎨 Personnalisation (config.js)
 
-Tu peux désormais modifier l'apparence de chaque bouton individuellement pour l'adapter aux besoins visuels de ton neveu.
-1. Ajouter ou modifier une photo
+Le fichier config.js est le cerveau de ton application. C'est ici que tu gères tout.
+1. Gestion Unique de la Version
 
-    Format : JPG ou PNG.
+Plus besoin de modifier plusieurs fichiers. Changez simplement la ligne suivante en haut de config.js pour déclencher une mise à jour sur tous les appareils :
+var CONFIG_VERSION = "1.0.14";
+2. Ajouter une photo ou un Emoji
 
-    Lieu : Placer le fichier dans le dossier /images.
+    Image perso : Place le fichier dans /images et écris son nom : "emoji": "doudou.png"
 
-    Code : { "label": "DOUDOU", "emoji": "doudou.jpg", "son": "Je veux mon doudou" }
+    Emoji clavier : Utilise directement l'icône : "emoji": "🏠"
 
-2. Gérer les Couleurs (Fond et Contour)
+3. Couleurs et Visibilité
 
-Par défaut, les boutons sont blancs avec un contour gris. Tu peux changer cela :
+    Couleurs : Utilisez "couleur": "#HEX" pour le fond et "couleurBordure": "#HEX" pour le contour (optimisé pour le Keyguard).
 
-    Changer le fond : Ajoute "couleur": "#HEX" (ex: #2ecc71 pour du vert).
+    Transparence : Les étiquettes de texte sont désormais en mode "verre dépoli" (semi-transparentes) pour ne plus masquer le bas des images.
 
-    Changer le contour : Ajoute "couleurBordure": "#HEX".
+    Masquer le texte : En mettant "label": "", l'image prendra toute la place et l'étiquette disparaîtra.
 
-    Exemple (Bouton bicolore) :
-    { "label": "BOIRE", "emoji": "boire.png", "couleur": "#ffffff", "couleurBordure": "#3498db" }
+🔄 Mise à jour du Cache
 
-3. Masquer le Texte (Label)
+Si les modifications ne s'affichent pas immédiatement sur la tablette :
 
-Si tu souhaites n'afficher que l'image pour épurer l'interface :
+    Bouton de secours : Cliquez sur le numéro de version (ex: v1.0.14 🔄) en haut à droite de l'écran d'accueil. Cela videra instantanément le cache et rechargera l'application.
 
-    Laisse le label vide : "label": "".
-
-    L'image ou l'émoji se centrera automatiquement dans le bouton et l'étiquette blanche disparaîtra.
-
-🔄 Forcer la mise à jour (Le cache)
-
-C'est l'étape cruciale pour que la tablette télécharge les nouvelles images ou les changements de code :
-
-    Ouvrir sw.js.
-
-    Modifier la variable CACHE_NAME tout en haut (ex: passer de v1 à v2).
-
-    Recharger la page sur la tablette avec une connexion Wi-Fi.
+    Automatique : Dès que vous changez la CONFIG_VERSION dans le code, l'application détecte le changement et propose (ou force) le rechargement au prochain démarrage.
 
 🛠 Infos Techniques & Impression 3D
 Réglages Logiciels
 
-    Grille : 4 colonnes x 4 lignes (1 ligne Titre/Retour + 3 lignes de boutons).
+    Grille : 4 colonnes x 4 lignes.
 
-    Bordures CSS : Configurées à 8px pour correspondre à l'épaisseur des parois du Keyguard.
+    Bordures CSS : Fixées à 8px pour s'aligner parfaitement avec les parois de ton Keyguard imprimé.
 
-    Affichage : Le texte est encapsulé dans une étiquette (cadre) avec un fond blanc opaque pour garantir la lisibilité au-dessus des images.
+    Responsive : Les images et emojis utilisent la fonction clamp() pour rester lisibles quelle que soit la taille de la tablette.
 
 Réglages Impression 3D
 
-    Précision : Optimisé pour une impression stable à 180°C (selon ton filament).
+    Température : Optimisé pour ton filament à 180°C.
 
-    Matériau : Utiliser un filament doux au toucher (PLA ou PETG).
+    Keyguard : Dessiné pour une grille 4x4 avec une rangée supérieure dédiée au titre et au bouton retour.
 
-    Design : Prévoir des bords chanfreinés sur le Keyguard pour faciliter l'accès aux boutons dans les angles et maximiser la visibilité des pictogrammes.
+    Astuce : Les bords chanfreinés sur le plastique permettent à ton neveu de mieux glisser ses doigts vers le centre des boutons.
+
+📁 Structure des fichiers
+
+    index.html : Structure de base.
+
+    style.css : Design, transparence et réglages du Keyguard.
+
+    script.js : Moteur de l'application et synthèse vocale.
+
+    config.js : Ta source unique pour les boutons et la version.
+
+    sw.js : Gestion de la mémoire hors-ligne (automatisé).
