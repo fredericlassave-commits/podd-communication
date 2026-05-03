@@ -1,4 +1,4 @@
-var CONFIG_VERSION = "1.0.21"; // <-- L'UNIQUE ENDROIT À MODIFIER
+var CONFIG_VERSION = "1.0.22"; // <-- L'UNIQUE ENDROIT À MODIFIER
 
 var CONFIG_PODD = {
     "home": {
@@ -8,11 +8,11 @@ var CONFIG_PODD = {
             { "label": "", "emoji": "boire.png", "page": "page-boire", "couleurBordure": "#3498db" },
             { "label": "", "emoji": "jouer.png", "page": "page-jouer", "couleurBordure": "#9b59b6" },
             { "label": "LES GENS", "emoji": "👨‍👩‍👦", "page": "page-gens", "couleurBordure": "#f368e0" },
-            { "label": "SENTIMENTS", "emoji": "😊", "page": "page-emotions", "couleurBordure": "#ff9f43" },
+            { "label": "", "emoji": "moi.png", "page": "page-emotions", "couleurBordure": "#ff9f43" },
             { "label": "MON CORPS", "emoji": "👦", "page": "page-corps", "couleurBordure": "#00d2d3" },
-            { "label": "LIEUX", "emoji": "🏠", "page": "page-lieux", "couleurBordure": "#54a0ff" },
-            { "label": "ACTIONS", "emoji": "🏃", "page": "page-actions", "couleurBordure": "#ff9f43" },            
             { "label": "HABITS", "emoji": "👕", "page": "page-habits", "couleurBordure": "#34495e" },
+            { "label": "ACTIONS", "emoji": "🏃", "page": "page-actions", "couleurBordure": "#ff9f43" },            
+            { "label": "", "emoji": "saispas.png", "son": "Je ne sais pas", "couleurBordure": "#ff6600", "couleur": "#ff6600" },
             { "label": "", "emoji": "oui.jpg", "son": "OUI", "couleurBordure": "#00ff00", "couleur": "#00ff00" },
             { "label": "", "emoji": "non.jpg", "son": "NON", "couleurBordure": "#ff0000","couleur": "#ff0000" },
             { "label": "", "emoji": "tourner_page.png", "page": "page-plus", "couleurBordure": "#718096" }
@@ -87,14 +87,16 @@ var CONFIG_PODD = {
     "page-emotions": {
         "titre": "SENTIMENTS",
         "boutons": [
-            { "label": "CONTENT", "emoji": "😄", "son": "Je suis content" },
-            { "label": "FATIGUÉ", "emoji": "😴", "son": "Je suis fatigué" },
-            { "label": "COLÈRE", "emoji": "😡", "son": "Je suis en colère" },
-            { "label": "MAL", "emoji": "🤕", "son": "J'ai mal" },
-            { "label": "STOP", "emoji": "✋", "son": "Arrêtez ça" },
-            { "label": "BRUIT", "emoji": "👂", "son": "C'est trop bruyant" },
-            { "label": "", "emoji": "aime.png", "son": "J'aime beaucoup" }, { "label": "", "type": "vide" },
-            { "label": "", "type": "vide" }, { "label": "", "type": "vide" },
+            { "label": "CONTENT", "emoji": "content.png", "son": "Je suis content", "couleurBordure": "#00ff00" },
+            { "label": "FATIGUÉ", "emoji": "fatigue.png", "son": "Je suis fatigué", "couleurBordure": "#191970" },
+            { "label": "COLÈRE", "emoji": "colere.png", "son": "Je suis en colère", "couleurBordure": "#ff0000" },
+            { "label": "MAL", "emoji": "🤕", "son": "J'ai mal", "couleurBordure": "#ff0000" },
+            { "label": "", "emoji": "stop.png", "son": "Arrêtez ça", "couleurBordure": "#ffa500" },
+            { "label": "", "emoji": "beau.png", "son": "C'est beau", "couleurBordure": "#ff5a98", "couleur": "#ff5a98" },
+			{ "label": "", "emoji": "vapas.png", "son": "ça va pas", "couleurBordure": "#ff0000" },
+            { "label": "", "emoji": "super.png", "son": "C'est super", "couleurBordure": "#00ff00" },			
+			{ "label": "", "emoji": "aime.png", "son": "J'aime beaucoup", "couleurBordure": "#00ff00" },
+			{ "label": "", "emoji": "aimepas.png", "son": "Je n'aime pas", "couleurBordure": "#ff0000" },
             { "label": "", "emoji": "tourner_page.png", "page": "page-emotions-plus", "couleurBordure": "#718096" },
             { "label": "", "emoji": "oups.png", "page": "home", "couleurBordure": "#2d3436" }
         ]
@@ -149,14 +151,16 @@ var CONFIG_PODD = {
     "page-actions": {
         "titre": "ACTIONS",
         "boutons": [
-            { "label": "REGARDER", "emoji": "👀", "son": "Regarde" },
-            { "label": "ÉCOUTER", "emoji": "👂", "son": "Écoute" },
-            { "label": "DONNER", "emoji": "🤲", "son": "Donne-moi" },
-            { "label": "PARTIR", "emoji": "🚪", "son": "Je veux partir" },
-            { "label": "ATTENDRE", "emoji": "⏳", "son": "Attends" },
+            { "label": "", "emoji": "moi.png", "son": "Moi", "couleurBordure": "#ff9f43" },
+			{ "label": "", "emoji": "toi.png", "son": "Toi", "couleurBordure": "#ff9f43" },
+			{ "label": "", "emoji": "vouloir.png", "son": "vouloir" },
+			{ "label": "", "emoji": "aller.png", "son": "aller" },
+			{ "label": "", "emoji": "regarder.png", "son": "Regarder" },
+			{ "label": "", "emoji": "aider.png", "son": "Aider" },
+            { "label": "ÉCOUTER", "emoji": "👂", "son": "Écouter" },
+            { "label": "DONNER", "emoji": "🤲", "son": "Donner" },                        
             { "label": "ENCORE", "emoji": "encore.png", "son": "Encore" },
-            { "label": "", "type": "vide" }, { "label": "", "type": "vide" },
-            { "label": "", "type": "vide" }, { "label": "", "type": "vide" },
+			{ "label": "", "emoji": "dormir.png", "son": "dormir", "couleurBordure": "#0f056b" },                        
             { "label": "", "emoji": "tourner_page.png", "page": "page-actions-plus", "couleurBordure": "#718096" },
             { "label": "", "emoji": "oups.png", "page": "home", "couleurBordure": "#2d3436" }
         ]
@@ -186,7 +190,7 @@ var CONFIG_PODD = {
             { "label": "", "type": "vide" }, { "label": "", "type": "vide" },
             { "label": "", "type": "vide" }, { "label": "", "type": "vide" },
             { "label": "", "type": "vide" },
-            { "label": "", "emoji": "oups.png", "page": "home", "couleurBordure": "#2d3436" }
+            { "label": "", "emoji": "oups.png", "page": "page-manger", "couleurBordure": "#2d3436" }
         ]
     },
 	"page-boire-plus": {
@@ -200,7 +204,7 @@ var CONFIG_PODD = {
             { "label": "", "type": "vide" }, { "label": "", "type": "vide" },
             { "label": "", "type": "vide" }, { "label": "", "type": "vide" },
             { "label": "", "type": "vide" },
-            { "label": "", "emoji": "oups.png", "page": "home", "couleurBordure": "#2d3436" }
+            { "label": "", "emoji": "oups.png", "page": "page-boire", "couleurBordure": "#2d3436" }
         ]
     },
 	"page-jouer-plus": {
@@ -214,7 +218,7 @@ var CONFIG_PODD = {
             { "label": "", "type": "vide" }, { "label": "", "type": "vide" },
             { "label": "", "type": "vide" }, { "label": "", "type": "vide" },
             { "label": "", "type": "vide" },
-            { "label": "", "emoji": "oups.png", "page": "home", "couleurBordure": "#2d3436" }
+            { "label": "", "emoji": "oups.png", "page": "page-jouer", "couleurBordure": "#2d3436" }
         ]
     },
 	"page-gens-plus": {
@@ -228,13 +232,13 @@ var CONFIG_PODD = {
             { "label": "", "type": "vide" }, { "label": "", "type": "vide" },
             { "label": "", "type": "vide" }, { "label": "", "type": "vide" },
             { "label": "", "type": "vide" },
-            { "label": "", "emoji": "oups.png", "page": "home", "couleurBordure": "#2d3436" }
+            { "label": "", "emoji": "oups.png", "page": "page-gens", "couleurBordure": "#2d3436" }
         ]
     },
 	"page-emotions-plus": {
         "titre": "PLUS DE CHOIX",
         "boutons": [
-            { "label": "", "type": "vide" },
+            { "label": "BRUIT", "emoji": "👂", "son": "C'est trop bruyant", "couleurBordure": "#ffff00" },
 			{ "label": "", "type": "vide" },
             { "label": "", "type": "vide" },
             { "label": "", "type": "vide" },
@@ -242,7 +246,7 @@ var CONFIG_PODD = {
             { "label": "", "type": "vide" }, { "label": "", "type": "vide" },
             { "label": "", "type": "vide" }, { "label": "", "type": "vide" },
             { "label": "", "type": "vide" },
-            { "label": "", "emoji": "oups.png", "page": "home", "couleurBordure": "#2d3436" }
+            { "label": "", "emoji": "oups.png", "page": "page-emotions", "couleurBordure": "#2d3436" }
         ]
     },
 	"page-corps-plus": {
@@ -256,7 +260,7 @@ var CONFIG_PODD = {
             { "label": "", "type": "vide" }, { "label": "", "type": "vide" },
             { "label": "", "type": "vide" }, { "label": "", "type": "vide" },
             { "label": "", "type": "vide" },
-            { "label": "", "emoji": "oups.png", "page": "home", "couleurBordure": "#2d3436" }
+            { "label": "", "emoji": "oups.png", "page": "page-corps", "couleurBordure": "#2d3436" }
         ]
     },
 	"page-lieux-plus": {
@@ -270,7 +274,7 @@ var CONFIG_PODD = {
             { "label": "", "type": "vide" }, { "label": "", "type": "vide" },
             { "label": "", "type": "vide" }, { "label": "", "type": "vide" },
             { "label": "", "type": "vide" },
-            { "label": "", "emoji": "oups.png", "page": "home", "couleurBordure": "#2d3436" }
+            { "label": "", "emoji": "oups.png", "page": "page-lieux", "couleurBordure": "#2d3436" }
         ]
     },
 	"page-habits-plus": {
@@ -284,21 +288,22 @@ var CONFIG_PODD = {
             { "label": "", "type": "vide" }, { "label": "", "type": "vide" },
             { "label": "", "type": "vide" }, { "label": "", "type": "vide" },
             { "label": "", "type": "vide" },
-            { "label": "", "emoji": "oups.png", "page": "home", "couleurBordure": "#2d3436" }
+            { "label": "", "emoji": "oups.png", "page": "page-habits", "couleurBordure": "#2d3436" }
         ]
     },
 	"page-actions-plus": {
         "titre": "PLUS DE CHOIX",
         "boutons": [
+            { "label": "", "emoji": "faire.png", "son": "faire" },
+			{ "label": "ATTENDRE", "emoji": "stop.png", "son": "Attendre" },
+			{ "label": "PARTIR", "emoji": "🚪", "son": "partir" },
             { "label": "", "type": "vide" },
-			{ "label": "", "type": "vide" },
             { "label": "", "type": "vide" },
-            { "label": "", "type": "vide" },
+            { "label": "", "type": "vide" }, 
             { "label": "", "type": "vide" }, { "label": "", "type": "vide" },
             { "label": "", "type": "vide" }, { "label": "", "type": "vide" },
-            { "label": "", "type": "vide" }, { "label": "", "type": "vide" },
             { "label": "", "type": "vide" },
-            { "label": "", "emoji": "oups.png", "page": "home", "couleurBordure": "#2d3436" }
+            { "label": "", "emoji": "oups.png", "page": "page-actions", "couleurBordure": "#2d3436" }
         ]
     },
     "page-temps": {
