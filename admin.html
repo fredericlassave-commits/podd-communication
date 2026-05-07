@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Configurateur PODD - Admin (4x3)</title>
+    <style>
+        :root { --bg-color: #f4f7f6; --primary-color: #3498db; --accent-color: #2ecc71; --danger-color: #e74c3c; --text-color: #2c3e50; --sidebar-width: 280px; }
+        body { font-family: 'Segoe UI', sans-serif; background-color: var(--bg-color); color: var(--text-color); margin: 0; display: flex; height: 100vh; overflow: hidden; }
+        #sidebar { width: var(--sidebar-width); background: white; border-right: 1px solid #dcdde1; padding: 20px; display: flex; flex-direction: column; box-shadow: 2px 0 5px rgba(0,0,0,0.05); }
+        .import-box { background: #ebf5fb; border: 2px dashed var(--primary-color); padding: 15px; border-radius: 8px; margin-bottom: 20px; text-align: center; }
+        .btn-import { background: var(--primary-color); color: white; padding: 8px 12px; border-radius: 4px; cursor: pointer; display: inline-block; margin-top: 10px; font-size: 13px; }
+        #file-input { display: none; }
+        #page-list { flex: 1; overflow-y: auto; margin-top: 10px; }
+        .page-item { padding: 10px; margin-bottom: 5px; background: #f8f9fa; border-radius: 6px; cursor: pointer; border-left: 4px solid transparent; font-size: 14px; }
+        .page-item.active { background: #e1f5fe; border-left-color: var(--primary-color); color: var(--primary-color); font-weight: bold; }
+        #main { flex: 1; display: flex; flex-direction: column; padding: 25px; overflow-y: auto; }
+        #preview-section { background: #34495e; padding: 20px; border-radius: 15px; width: fit-content; margin: 0 auto 20px auto; }
+        #grid-container { display: grid; grid-template-columns: repeat(4, 1fr); grid-template-rows: repeat(3, 1fr); gap: 10px; width: 620px; height: 420px; }
+        .grid-btn { background: white; border-radius: 10px; border: 4px solid transparent; display: flex; flex-direction: column; align-items: center; justify-content: center; cursor: pointer; box-sizing: border-box; overflow: hidden; padding: 5px; }
+        .grid-btn.active { border-color: #ff9f43 !important; box-shadow: 0 0 15px #ff9f43; z-index: 5; }
+        .grid-btn.vide { background: #ecf0f1; border: 1px dashed #bdc3c7; }
+        .preview-img { max-width: 80%; max-height: 65%; object-fit: contain; }
+        .preview-label { font-size: 10px; font-weight: bold; text-align: center; text-transform: uppercase; margin-top: 4px; width: 100%; word-wrap: break-word; }
+        #editor-panel { background: white; padding: 20px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.08); margin-bottom: 20px; }
+        .grid-form { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
+        input, select { width: 100%; padding: 8px; border: 1px solid #ced4da; border-radius: 6px; box-sizing: border-box; font-size: 13px; }
+        #export-zone { background: #2d3436; padding: 15px; border-radius: 12px; color: white; }
+        textarea { width: 100%; height: 100px; background: #1e272e; color: #0be881; border: none; padding: 10px; font-family: monospace; border-radius: 8px; margin-top: 10px; font-size: 11px; resize: none; }
+        .btn-action { padding: 10px 20px; border: none; border-radius: 6px; cursor: pointer; font-weight: bold; transition: opacity 0.2s; }
+        .btn-action:hover { opacity: 0.8; }
+        .btn-save { background: var(--accent-color); color: white; }
+        .btn-delete { background: var(--danger-color); color: white; margin-top: 8px; font-size: 12px; }
+    </style>
+</head>
+<body>
+
+<div id="sidebar">
+    <div class="import-box">
+        <strong>Charger config.js</strong><br>
+        <label for="file-input" class="btn-import">Sélectionner le fichier</label>
+        <input type="file" id="file-input" accept=".js">
+    </div>
+    <div style="font-size: 12px; margin-bottom: 10px; color: #666;">
+        Version détectée : <span id="version-display">Aucune</span>
+    </div>
+    <h2>Pages</h2>
+    <div id="page-list"></div>
+    
+    <div style="margin-top: 15px; display: flex; flex-direction: column;">
+        <button class="btn-action" style="background:var(--primary-color); color:white;" onclick="addPage()">+ Nouvelle Page</button>
+        <button id="del-page-btn" class="btn-action btn-delete" onclick="deleteCurrentPage()" style="display:none;">🗑 Supprimer cette page</button>
+    </div>
+</div>
+
+<div id="main">
+    <h2 id="current-page-title" style="margin-top:0;">Édition : HOME</h2>
+    <div id="preview-section"><div id="grid-container"></div></div>
+
+    <div id="editor-panel">
+        <div class="grid-form">
+            <div class="form-group">
+                <label>Type de bouton</label>
+                <select id="edit-type" onchange="toggleVide(this.value)">
+                    <option value="normal">Normal</option>
+                    <option value="vide">Vide</option>
+                </select>
+            </div>
+            <div id="normal-fields" style="display:contents;">
+                <div class="form-group"><label>Label (Texte bouton)</label><input type="text" id="edit-label" oninput="updateButton()"></div>
+                <div class="form-group"><label>Image (png/jpg) ou Emoji</label><input type="text" id="edit-emoji" oninput="updateButton()"></div>
+                <div class="form-group"><label>Lien vers Page (ID)</label><input type="text" id="edit-page" oninput="updateButton()"></div>
+                <div class="form-group"><label>Synthèse vocale (Son)</label><input type="text" id="edit-son" oninput="updateButton()"></div>
+                <div class="form-group"><label>Couleur Fond</label><input type="color" id="edit-color" oninput="updateButton()"></div>
+                <div class="form-group"><label>Bordure (Keyguard)</label><input type="color" id="edit-border" oninput="updateButton()"></div>
+            </div>
+        </div>
+    </div>
+
+    <div id="export-zone">
+        <div style="display: flex; justify-content: space-between; align-items: center;">
+            <h4 style="margin:0;">config.js (Incrémenté +1)</h4>
+            <button class="btn-action btn-save" onclick="exportConfig()">Copier le Code</button>
+        </div>
+        <textarea id="output-code" readonly></textarea>
+    </div>
+</div>
+
+<script>
+    let poddData = { "home": { titre: "HOME", boutons: Array(12).fill().map(() => ({label:"", type:"vide"})) } };
+    let currentPage = "home";
+    let selectedBtnIndex = 0;
+    let currentVersion = "1.0.0";
+
+    function renderGrid() {
+        const grid = document.getElementById('grid-container');
+        grid.innerHTML = '';
+        const page = poddData[currentPage];
+        if(!page) return;
+        
+        for(let i=0; i<12; i++) {
+            const btn = page.boutons[i] || { label: "", type: "vide" };
+            const div = document.createElement('div');
+            div.className = `grid-btn ${i === selectedBtnIndex ? 'active' : ''} ${btn.type === 'vide' ? 'vide' : ''}`;
+            
+            if (btn.type !== 'vide') {
+                div.style.backgroundColor = btn.couleur || "#ffffff";
+                div.style.borderColor = btn.couleurBordure || "#bdc3c7";
+                let media = (btn.emoji && (btn.emoji.includes('.') || btn.emoji.includes('/'))) 
+                    ? `<img src="images/${btn.emoji}" class="preview-img" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiNjY2MiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIj48cmVjdCB4PSIzIiB5PSIzIiB3aWR0aD0iMTgiIGhlaWdodD0iMTgiIHJ4PSIyIiByeT0iMiI+PC9yZWN0PjxjaXJjbGUgY3g9IjguNSIgY3k9IjguNSIgcj0iMS41Ij48L2NpcmNsZT48cG9seWdvbiBwb2ludHM9IjIxIDE1IDE2IDEwIDUgMjEgMjEgMjEiPjwvcG9seWdvbj48L3N2Zz4='">` 
+                    : `<span style="font-size:30px">${btn.emoji || ''}</span>`;
+                div.innerHTML = `${media}<div class="preview-label">${btn.label || ''}</div>`;
+            }
+            div.onclick = () => selectButton(i);
+            grid.appendChild(div);
+        }
+    }
+
+    function selectButton(index) {
+        selectedBtnIndex = index;
+        const btn = poddData[currentPage].boutons[index] || { label: "", type: "vide" };
+        document.getElementById('edit-type').value = btn.type || "normal";
+        document.getElementById('edit-label').value = btn.label || "";
+        document.getElementById('edit-emoji').value = btn.emoji || "";
+        document.getElementById('edit-page').value = btn.page || "";
+        document.getElementById('edit-son').value = btn.son || "";
+        document.getElementById('edit-color').value = btn.couleur || "#ffffff";
+        document.getElementById('edit-border').value = btn.couleurBordure || "#bdc3c7";
+        toggleVide(btn.type);
+        renderGrid();
+    }
+
+    function toggleVide(val) {
+        document.getElementById('normal-fields').style.display = (val === 'vide') ? 'none' : 'contents';
+        updateButton();
+    }
+
+    function updateButton() {
+        const type = document.getElementById('edit-type').value;
+        if (type === 'vide') {
+            poddData[currentPage].boutons[selectedBtnIndex] = { label: "", type: "vide" };
+        } else {
+            poddData[currentPage].boutons[selectedBtnIndex] = {
+                label: document.getElementById('edit-label').value,
+                emoji: document.getElementById('edit-emoji').value,
+                page: document.getElementById('edit-page').value,
+                son: document.getElementById('edit-son').value,
+                couleur: document.getElementById('edit-color').value,
+                couleurBordure: document.getElementById('edit-border').value
+            };
+        }
+        renderGrid();
+    }
+
+    function exportConfig() {
+        let parts = currentVersion.split('.');
+        if(parts.length === 3) { parts[2] = parseInt(parts[2]) + 1; currentVersion = parts.join('.'); }
+
+        const cleanData = JSON.parse(JSON.stringify(poddData));
+        for (let pg in cleanData) {
+            cleanData[pg].boutons = cleanData[pg].boutons.map(b => {
+                if (b.type === 'vide') return { label: "", type: "vide" };
+                let newB = { label: b.label || "" };
+                if (b.emoji) newB.emoji = b.emoji;
+                if (b.page) newB.page = b.page;
+                if (b.son) newB.son = b.son;
+                if (b.couleur && b.couleur !== "#ffffff") newB.couleur = b.couleur;
+                if (b.couleurBordure && b.couleurBordure !== "#bdc3c7") newB.couleurBordure = b.couleurBordure;
+                return newB;
+            });
+        }
+
+        const code = `var CONFIG_VERSION = "${currentVersion}"; // <-- L'UNIQUE ENDROIT À MODIFIER\n\nvar CONFIG_PODD = ${JSON.stringify(cleanData, null, 4)};`;
+        document.getElementById('output-code').value = code;
+        document.getElementById('output-code').select();
+        document.execCommand('copy');
+        document.getElementById('version-display').innerText = currentVersion;
+        alert("Config v" + currentVersion + " copiée !");
+    }
+
+    document.getElementById('file-input').addEventListener('change', function(e) {
+        const reader = new FileReader();
+        reader.onload = (event) => {
+            const content = event.target.result;
+            const verMatch = content.match(/var CONFIG_VERSION = "(.+?)"/);
+            if(verMatch) { currentVersion = verMatch[1]; document.getElementById('version-display').innerText = currentVersion; }
+            const jsonStr = content.split('var CONFIG_PODD =')[1].trim().replace(/;$/, '');
+            poddData = JSON.parse(jsonStr);
+            currentPage = Object.keys(poddData)[0];
+            renderPageList();
+            init();
+        };
+        reader.readAsText(e.target.files[0]);
+    });
+
+    function renderPageList() {
+        const list = document.getElementById('page-list');
+        list.innerHTML = '';
+        Object.keys(poddData).forEach(key => {
+            const div = document.createElement('div');
+            div.className = `page-item ${key === currentPage ? 'active' : ''}`;
+            div.innerText = key.toUpperCase();
+            div.onclick = () => { currentPage = key; selectButton(0); renderPageList(); };
+            list.appendChild(div);
+        });
+        document.getElementById('current-page-title').innerText = "Édition : " + currentPage.toUpperCase();
+        
+        // Afficher/Cacher le bouton de suppression (on ne supprime pas la home)
+        document.getElementById('del-page-btn').style.display = (currentPage === 'home') ? 'none' : 'block';
+    }
+
+    function addPage() {
+        const name = prompt("Nom de la page :");
+        if(name) {
+            const id = "page-" + name.toLowerCase().replace(/\s/g, '-');
+            if (poddData[id]) { alert("Cette page existe déjà !"); return; }
+            poddData[id] = { titre: name.toUpperCase(), boutons: Array(12).fill().map(() => ({label:"", type:"vide"})) };
+            currentPage = id;
+            renderPageList(); renderGrid(); selectButton(0);
+        }
+    }
+
+    function deleteCurrentPage() {
+        if (currentPage === 'home') return;
+        if (confirm("⚠️ Voulez-vous vraiment supprimer la page '" + currentPage + "' ? Cette action est irréversible.")) {
+            delete poddData[currentPage];
+            currentPage = 'home';
+            renderPageList();
+            init();
+        }
+    }
+
+    function init() { renderGrid(); selectButton(0); }
+    init();
+</script>
+</body>
+</html>
