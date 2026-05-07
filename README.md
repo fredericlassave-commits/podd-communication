@@ -66,3 +66,6 @@ Réglages Impression 3D
     config.js : Ta source unique pour les boutons et la version.
 
     sw.js : Gestion de la mémoire hors-ligne (automatisé).
+	
+## 📖 Documentation
+* [Guide d'utilisation de l'interface Admin](ADMIN_GUIDE.md)
