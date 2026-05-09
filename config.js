@@ -1,4 +1,4 @@
-var CONFIG_VERSION = "1.0.32"; // <-- L'UNIQUE ENDROIT À MODIFIER
+var CONFIG_VERSION = "1.0.33"; // <-- L'UNIQUE ENDROIT À MODIFIER
 
 var CONFIG_PODD = {
     "home": {
@@ -1445,13 +1445,14 @@ var CONFIG_PODD = {
         "boutons": [
             {
                 "label": "",
-                "type": "vide"
+                "emoji": "question.png",
+                "page": "page-questions"
             },
             {
                 "label": "",
                 "emoji": "activite.png",
                 "page": "page-jouer",
-                "couleurBordure": "#80ff80"
+                "couleurBordure": "#ffff00"
             },
             {
                 "label": "",
@@ -1467,7 +1468,9 @@ var CONFIG_PODD = {
             },
             {
                 "label": "",
-                "type": "vide"
+                "emoji": "aller2.png",
+                "page": "page-lieux",
+                "couleurBordure": "#80ff00"
             },
             {
                 "label": "",
@@ -1479,12 +1482,15 @@ var CONFIG_PODD = {
             },
             {
                 "label": "",
-                "type": "vide"
+                "emoji": "quotidien.png",
+                "page": "page-quotidien",
+                "couleurBordure": "#804000"
             },
             {
                 "label": "",
                 "emoji": "faire2.png",
-                "page": "page-actions"
+                "page": "page-actions",
+                "couleurBordure": "#ff0080"
             },
             {
                 "label": "",
@@ -1613,6 +1619,115 @@ var CONFIG_PODD = {
                 "label": "",
                 "emoji": "oups.png",
                 "page": "home",
+                "couleurBordure": "#2d3436"
+            }
+        ]
+    },
+    "page-questions": {
+        "titre": "QUESTIONS",
+        "boutons": [
+            {
+                "label": ""
+            },
+            {
+                "label": "",
+                "type": "vide"
+            },
+            {
+                "label": "",
+                "type": "vide"
+            },
+            {
+                "label": "",
+                "type": "vide"
+            },
+            {
+                "label": "",
+                "type": "vide"
+            },
+            {
+                "label": "",
+                "type": "vide"
+            },
+            {
+                "label": "",
+                "type": "vide"
+            },
+            {
+                "label": "",
+                "type": "vide"
+            },
+            {
+                "label": "",
+                "type": "vide"
+            },
+            {
+                "label": "",
+                "type": "vide"
+            },
+            {
+                "label": "",
+                "type": "vide"
+            },
+            {
+                "label": "",
+                "emoji": "oups.png",
+                "page": "page-dire-plus",
+                "couleurBordure": "#2d3436"
+            }
+        ]
+    },
+    "page-quotidien": {
+        "titre": "QUOTIDIEN",
+        "boutons": [
+            {
+                "label": "",
+                "type": "vide"
+            },
+            {
+                "label": "",
+                "type": "vide"
+            },
+            {
+                "label": "",
+                "type": "vide"
+            },
+            {
+                "label": "",
+                "type": "vide"
+            },
+            {
+                "label": "",
+                "type": "vide"
+            },
+            {
+                "label": "",
+                "type": "vide"
+            },
+            {
+                "label": "",
+                "type": "vide"
+            },
+            {
+                "label": "",
+                "type": "vide"
+            },
+            {
+                "label": "",
+                "type": "vide"
+            },
+            {
+                "label": "",
+                "type": "vide"
+            },
+            {
+                "label": "",
+                "type": "vide"
+            },
+            {
+                "label": "",
+                "emoji": "oups.png",
+                "page": "page-dire-plus",
                 "couleurBordure": "#2d3436"
             }
         ]
