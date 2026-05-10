@@ -1,4 +1,4 @@
-var CONFIG_VERSION = "1.0.33"; // <-- L'UNIQUE ENDROIT À MODIFIER
+var CONFIG_VERSION = "1.0.35"; // <-- L'UNIQUE ENDROIT À MODIFIER
 
 var CONFIG_PODD = {
     "home": {
@@ -146,7 +146,7 @@ var CONFIG_PODD = {
             {
                 "label": "",
                 "emoji": "oups.png",
-                "page": "home",
+                "page": "page-dire-plus",
                 "couleurBordure": "#2d3436"
             }
         ]
@@ -210,7 +210,7 @@ var CONFIG_PODD = {
             {
                 "label": "",
                 "emoji": "oups.png",
-                "page": "home",
+                "page": "page-dire-plus",
                 "couleurBordure": "#2d3436"
             }
         ]
@@ -547,7 +547,7 @@ var CONFIG_PODD = {
             {
                 "label": "",
                 "emoji": "oups.png",
-                "page": "home",
+                "page": "page-dire-plus",
                 "couleurBordure": "#2d3436"
             }
         ]
@@ -1682,6 +1682,71 @@ var CONFIG_PODD = {
         "boutons": [
             {
                 "label": "",
+                "emoji": "manger2.png",
+                "page": "page-manger",
+                "couleurBordure": "#ffff00"
+            },
+            {
+                "label": "",
+                "type": "vide"
+            },
+            {
+                "label": "",
+                "type": "vide"
+            },
+            {
+                "label": "",
+                "type": "vide"
+            },
+            {
+                "label": "",
+                "emoji": "boire2.png",
+                "page": "page-boire",
+                "couleurBordure": "#00ffff"
+            },
+            {
+                "label": "",
+                "type": "vide"
+            },
+            {
+                "label": "",
+                "type": "vide"
+            },
+            {
+                "label": "",
+                "type": "vide"
+            },
+            {
+                "label": "",
+                "emoji": "dormir.png",
+                "son": "Je veux dormir",
+                "couleurBordure": "#0000ff"
+            },
+            {
+                "label": "",
+                "emoji": "habiller2.png",
+                "page": "page-habits",
+                "couleurBordure": "#8080ff"
+            },
+            {
+                "label": "",
+                "emoji": "tourner_page.png",
+                "page": "page-quotidien-plus",
+                "couleurBordure": "#c0c0c0"
+            },
+            {
+                "label": "",
+                "emoji": "oups.png",
+                "page": "page-dire-plus",
+                "couleurBordure": "#2d3436"
+            }
+        ]
+    },
+    "page-quotidien-plus": {
+        "titre": "QUOTIDIEN-PLUS",
+        "boutons": [
+            {
+                "label": "",
                 "type": "vide"
             },
             {
@@ -1727,7 +1792,7 @@ var CONFIG_PODD = {
             {
                 "label": "",
                 "emoji": "oups.png",
-                "page": "page-dire-plus",
+                "page": "page-quotidien",
                 "couleurBordure": "#2d3436"
             }
         ]
